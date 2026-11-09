@@ -1,10 +1,5 @@
 <?php
 declare(strict_types=1);
-
-// ==========================================
-// ETAPE 1 : LES QUATRE OPERATIONS
-// ==========================================
-
 function additionner(float $a, float $b): float {
     return $a + $b;
 }
@@ -23,10 +18,6 @@ function diviser(float $a, float $b): float {
     }
     return $a / $b;
 }
-
-// ==========================================
-// ETAPE 2 : FONCTIONS LOGIQUES
-// ==========================================
 
 function estPair(int $n): bool {
     return $n % 2 === 0;
@@ -67,11 +58,6 @@ function estPremier(int $n): bool {
 
     return true;
 }
-
-// ==========================================
-// ETAPE 3 : CALCULS COMMERCIAUX
-// ==========================================
-
 function calculerTTC(float $ht, float $tva = 20.0): float {
     return $ht * (1 + $tva / 100);
 }
@@ -91,11 +77,6 @@ function calculerFacture(
 
     return calculerTTC($totalApresRemise, $tva);
 }
-
-// ==========================================
-// ETAPE 4 : STATISTIQUES ET GEOMETRIE
-// ==========================================
-
 function moyenne(float ...$notes): float {
     if (count($notes) === 0) {
         return 0;
@@ -123,11 +104,6 @@ function fahrenheitVersCelsius(float $f): float {
 function convertirDevise(float $montant, float $taux): float {
     return $montant * $taux;
 }
-
-// ==========================================
-// ETAPE 5 : FONCTIONS A BOUCLE
-// ==========================================
-
 function factorielle(int $n): int {
     if ($n < 0) {
         throw new InvalidArgumentException("Nombre négatif interdit");
@@ -175,7 +151,6 @@ function pgcd(int $a, int $b): int {
     return $a;
 }
 
-// Puissance avec boucle, sans ** ni pow()
 function puissance(float $x, int $n): float {
     if ($x == 0 && $n < 0) {
         throw new InvalidArgumentException("Puissance impossible");
@@ -191,7 +166,6 @@ function puissance(float $x, int $n): float {
     return $n < 0 ? 1 / $resultat : $resultat;
 }
 
-// Version récursive
 function puissanceRecursive(float $x, int $n): float {
     if ($x == 0 && $n < 0) {
         throw new InvalidArgumentException("Puissance impossible");
